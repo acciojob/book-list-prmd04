@@ -1,1 +1,53 @@
 /*  your css code here. If applicable */
+*{
+  margin: 0px;
+  padding:0px;
+}
+.main_container{
+  height: 70vh;
+  width: 100%;
+  
+}
+.heading{
+  width: 25vh;
+  width: 100%;
+  text-align: center;
+}
+#book{
+  color: aqua;
+}
+.formgroup{
+  padding: 20px;
+  margin-top: 20px;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+}
+.formgroup>label{
+  margin-left: 10px;
+  font-size: x-large;
+}
+.formgroup>input{
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.formgroup>button{
+  margin-top: 20px;
+  height: 35px;
+  width: 100px;
+  margin-left: 11px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(65, 65, 235);
+  color: #ffffff;
+}
+.table{
+  margin: 0px 0px 10px 10px;
+  width: 90%;
+}
+#book-list td {
+    font-weight: bold;
+    border-bottom: 2px solid black; /* Line below each cell */
+}
+
