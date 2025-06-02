@@ -1,4 +1,4 @@
-  const form = document.getElementById('book-form');
+ const form = document.querySelector('.form-group');
     const bookList = document.getElementById('book-list');
 
     form.addEventListener('submit', function (e) {
@@ -13,12 +13,12 @@
         <td>${title}</td>
         <td>${author}</td>
         <td>${isbn}</td>
-        <td><button id="${isbn}" class="btn btn-danger btn-sm">X</button></td>
+        <td><button id="${isbn}" class="delete btn btn-danger btn-sm">X</button></td>
       `;
 
       bookList.appendChild(row);
 
-      const delButton = document.getElementById(`${isbn}`);
+      const delButton = row.querySelector('button.delete');
       delButton.addEventListener('click', function () {
         row.remove();
       });
