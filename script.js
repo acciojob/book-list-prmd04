@@ -1,29 +1,27 @@
-//your JS code here. If required.
-const form = document.querySelector(".formgroup");
-const bookList = document.getElementById("book-list");
+  const form = document.getElementById('book-form');
+    const bookList = document.getElementById('book-list');
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  //using this we stopped page reload when we click the submit button
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-  // let get the values from the form
-  const title = document.getElementById("title").value.trim();
-  const author = document.getElementById("author").value.trim();
-  const isbn = document.getElementById("isbn").value.trim();
+      const title = document.getElementById('title').value;
+      const author = document.getElementById('author').value;
+      const isbn = document.getElementById('isbn').value;
 
-  const row = document.createElement("tr");
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${title}</td>
+        <td>${author}</td>
+        <td>${isbn}</td>
+        <td><button id="${isbn}" class="btn btn-danger btn-sm">X</button></td>
+      `;
 
-  row.innerHTML = `<td>${title}</td>
-                    <td>${author}</td>
-                    <td>${isbn}</td>
-                    <td><button id=${isbn}>X</button></td>`;
-  bookList.appendChild(row);
+      bookList.appendChild(row);
 
-  const del = document.getElementById(`${isbn}`);
+      const delButton = document.getElementById(`${isbn}`);
+      delButton.addEventListener('click', function () {
+        row.remove();
+      });
 
-  del.addEventListener("click", function () {
-    row.remove();
-  });
-
-  form.reset();
-});
+      form.reset();
+    });
